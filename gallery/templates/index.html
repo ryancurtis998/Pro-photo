@@ -1,0 +1,31 @@
+{%extends 'base.html'%}
+{% block content %}
+{{ block.super}}
+<script>
+  function CopyFun(link) {
+  var copyText = document.getElementById(link);
+  copyText.select();
+  document.execCommand("copy");
+  alert("Text has been coppied: " + copyText.value);
+}
+</script>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="home">
+      <div class="col-md=12">
+        {% for image in index_images %}
+        <a data-fancybox href="{{image.image_path.url}}" data-caption="<p>{{image.image_description}}</p> <button type='button' class='btn btn-primary' onclick=CopyFun('{{image.id}}') name='button' >Copy Link</button>">
+          <img src=" {{image.image_path.url}}" alt=" massive image" />
+        </a>
+        <input type="text" class="hidden" value="https://Pro-photo.herokuapp.com{{image.image_path.url}}" id="{{image.id}}">
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{%endblock%}
