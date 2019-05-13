@@ -9,7 +9,7 @@
   alert("Text has been coppied: " + copyText.value);
 }
 </script>
-
+<body background="https://fsa.zobj.net/crop.php?r=gXHekfG1t2HAI2duBuxSxGdiCJgGSwKf9bakoOiJgc4xuTaWDYgOx06jNonBKzhzSdKeWMFZTLGJb2kAHcmzjzMLs0hQMNYlboK2rkRzNJDcHQP_6I4Z2gRUJdmbhQOv-wrOtlpNklvfaWrHKpQs1TZN0VROtZQLOFl7YrYw9-qcOfa7oKKbb-iFc4A">
 <div class="container-fluid">
   <div class="row">
     <div class="home">
@@ -17,6 +17,7 @@
         {% for image in index_images %}
         <a data-fancybox href="{{image.image_path.url}}" data-caption="<p>{{image.image_description}}</p> <button type='button' class='btn btn-primary' onclick=CopyFun('{{image.id}}') name='button' >Copy Link</button>">
           <img src=" {{image.image_path.url}}" alt=" massive image" />
+           <input type="text" class="hidden" value="{{image.image_path.url}}" id="{{image.id}}">
         </a>
         
         {% endfor %}

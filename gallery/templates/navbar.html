@@ -13,20 +13,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'newsToday' %}">Home <span class="sr-only">(current)</span></a>
      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Location
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'search_results' %}">london</a>
-          <a class="dropdown-item" href="{% url 'search_results' %}">nairobi</a>
-          <a class="dropdown-item" href="{% url 'search_results' %}">ngong</a>
-        </div>
-      </li>
+      
       
     </ul>
-    <form class="form-inline my-2 my-lg-0"  action="{% url 'search_results' %}">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="categorys" >
       <button class="btn btn-outline-success my-2 my-sm-0"  type="submit">Search</button>
      
     </form>
