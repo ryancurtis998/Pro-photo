@@ -46,9 +46,9 @@
               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           </div>
           <div class="modal-body" style="text-align:center">
-               <a target="_blank" href="{{photo.photo.url}}" id="imagedirectlink" class="badge badge-success" >Photo Link</a>
-              <img id="imageimage" class="figure-img img-fluid rounded" src='{{photo.photo.url}}'>
-              <p id="imagedescription">{{ photo.image_path.location }}</p>               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+               <a target="_blank" href="{{photo.image_path.url}}" id="imagedirectlink" class="badge badge-success" >Photo Link</a>
+              <img id="imageimage" class="figure-img img-fluid rounded" src='{{photo.image_path.url}}'>
+              <p id="imagedescription">{{ photo.image_description }}</p>               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>       </div>
   </div>
 </div>
