@@ -10,22 +10,47 @@
 }
 </script>
 <body background="https://fsa.zobj.net/crop.php?r=gXHekfG1t2HAI2duBuxSxGdiCJgGSwKf9bakoOiJgc4xuTaWDYgOx06jNonBKzhzSdKeWMFZTLGJb2kAHcmzjzMLs0hQMNYlboK2rkRzNJDcHQP_6I4Z2gRUJdmbhQOv-wrOtlpNklvfaWrHKpQs1TZN0VROtZQLOFl7YrYw9-qcOfa7oKKbb-iFc4A">
-<div class="container-fluid">
-  <div class="row">
-    <div class="home">
-      <div class="col-md=12">
-        {% for image in index_images %}
-        <a data-fancybox href="{{image.image_path.url}}" data-caption="<p>{{image.image_description}}</p> <button type='button' class='btn btn-primary' onclick=CopyFun('{{image.id}}') name='button' >Copy Link</button>">
-          <img src=" {{image.image_path.url}}" alt=" massive image" />
-           <input type="text" class="hidden" value="{{image.image_path.url}}" id="{{image.id}}">
-        </a>
-        
-        {% endfor %}
+<div class="card-deck">
+  <div class="container">
+      <div class="row">
+          {% for photo in photos %}
+          <div class="col-md-4">
+              <div class="card mb-3" style="max-width: 540px;">
+                  <img src='{{photo.image_path.url}}' alt="" class="card-img-top" width="100%" height="225">
+                  <div class="card-body">
+                      <p class="card-text">
+                          {{ photo.image_description }}
+                      </p>
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="btn-group">
+                              <button type="button" class="btn btn-sm btn-outline-primary" id="photo{{image_path.id}}"
+                                  data-whatever="{{image_path.id}}" data-toggle="modal" data-target="#{{photo.id}}"
+                                  onclick="showinfo(go)">View Photo</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% empty %}
+          <h3 class="text-center"> Ooops!!!! </h3>
+          {%endfor%}
       </div>
-    </div>
+  </div>
+</div>{% for photo in photos %}
+<div id="{{photo.id}}" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable ">
+      <div class="modal-content bg-secondary">
+          <div class="modal-header">
+              <h4 class="modal-title" id="imagetitle"></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body" style="text-align:center">
+               <a target="_blank" href="{{photo.photo.url}}" id="imagedirectlink" class="badge badge-success" >Photo Link</a>
+              <img id="imageimage" class="figure-img img-fluid rounded" src='{{photo.photo.url}}'>
+              <p id="imagedescription">{{ photo.photo.location }}</p>               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>       </div>
   </div>
 </div>
-
-
-
-{%endblock%}
+{%endfor%}
+{% endblock %}

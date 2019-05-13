@@ -8,7 +8,7 @@ from .models import Image,Category,Location
 def start(request):
     
     index_images = Image.objects.all()
-    return render(request,'index.html', {'index_images':index_images})
+    return render(request,'index.html', {'photos':index_images})
 
 def search_results(request):
 
