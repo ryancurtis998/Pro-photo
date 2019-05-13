@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'gallery.apps.GalleryConfig'
+    'gallery.apps.GalleryConfig',
+    'bootstrap3'
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,9 @@ WSGI_APPLICATION = 'photo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'Pro-photo',
+         'USER': '<ryan>',
+    'PASSWORD':'<12345>',
     }
 }
 
