@@ -2,7 +2,7 @@ body{
     overflow-x: hidden;
   }
   .navbar-inverse {
-      background-color: #ffff;
+      background-color: rgb(15, 255, 215);
       border: 0;
       -webkit-box-shadow: none;
       box-shadow: none;
