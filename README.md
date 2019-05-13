@@ -67,7 +67,7 @@ or just use this
 
 ## Live link
 
-Use this link to see the web-page
+Use this link to see the web-page https://pro-photo.herokuapp.com/
 
 ## Contact Information
 
